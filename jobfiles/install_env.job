@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu_a100
+#SBATCH --gpus=1
+#SBATCH --job-name=InstallEnvironment
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=04:00:00
+#SBATCH --output=jobfiles/slurms/install_env_output_%A.out
+
+module purge
+module load 2023
+module load IPython/8.14.0-GCCcore-12.3.0
+module load PyTorch/2.1.2-foss-2023a-CUDA-12.1.1
+module load scikit-learn/1.3.1-gfbf-2023a
+module load plotly.py/5.16.0-GCCcore-12.3.0
+module loadd matplotlib/3.7.2-gfbf-2023a
+
+cd $HOME/Sidechain-auto-encoder/
+virtualenv sidechain
+source sidechain/bin/activate
+pip install -r snellius_requirements.txt
+pip install -e .
+git clone https://github.com/thomgrand/torch_kdtree
+cd torch_kdtree
+git submodule init
+git submodule update
+pip install .
+cd $HOME/Sidechain-auto-encoder/
+git clone https://github.com/openmm/pdbfixer.git
+cd pdbfixer/
+python setup.py install
+python -m pip install lightning
+python -m openmm.testInstallation

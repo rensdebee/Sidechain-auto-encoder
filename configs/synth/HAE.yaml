@@ -1,0 +1,11 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 16
+VAE: false
+HAE: true
+epochs: 800
+data_path: "./dataset/synth/high_energy/data"
+hidden_dims: "[1024, 256, 128]"
+latent_dim: 0
+lr: 0.001
+reg_ratio: 0.1

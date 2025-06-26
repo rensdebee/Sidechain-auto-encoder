@@ -1,0 +1,14 @@
+# amino_acid: "ARG"
+batch_size: 2048
+num_workers: 8
+torsion: true
+epochs: 250
+num_folds: 5
+latent_path: "dataset/full/mapping_predicted_torsion_angles"
+energy_path: "dataset/full/energy"
+force: ["PeriodicTorsionForce", "LJForce", "CoulombForce"]
+iqr_filter_energy: True
+interpolate_energy: False
+normalize_energy: True
+inf_filter: True
+lr: 0.0005

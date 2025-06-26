@@ -1,0 +1,9 @@
+amino_acid: "CYS"
+batch_size: 1024
+num_workers: 0
+epochs: 800
+latent_path: "./dataset/energy_15k"
+energy_path: "./dataset/energy_15k"
+num_folds: 5
+torsion: false
+lr: 0.002

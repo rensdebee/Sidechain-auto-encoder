@@ -1,0 +1,18 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 16
+torsion_dim: 2
+epochs: 500
+num_folds: 5
+data_path: "dataset/full/data"
+decoder: true
+mul_HAE: true
+energy_path: "dataset/full/energy"
+force_types: ["PeriodicTorsionForce", "LJForce", "CoulombForce"]
+hidden_dims: "[2048, 512, 256]"
+HAE_dim: 0
+iqr_filter_energy: True
+interpolate_energy: False
+normalize_energy: True
+inf_filter: False
+lr: 0.005

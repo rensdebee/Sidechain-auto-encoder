@@ -1,0 +1,9 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 8
+epochs: 100
+num_folds: 5
+data_path: "dataset/full/data"
+latent_path: "dataset/full/mapping_predicted_torsion_angles"
+hidden_dims: "[1024, 256, 128]"
+lr: 0.001

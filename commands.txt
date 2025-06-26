@@ -1,0 +1,69 @@
+commands:
+srun --partition=gpu_h100 --gpus=1 --ntasks=1 --cpus-per-task=64 --time=00:59:00 --pty bash -i
+module purge
+module load 2023
+module load IPython/8.14.0-GCCcore-12.3.0
+module load PyTorch/2.1.2-foss-2023a-CUDA-12.1.1
+module load scikit-learn/1.3.1-gfbf-2023a
+module load plotly.py/5.16.0-GCCcore-12.3.0
+module load matplotlib/3.7.2-gfbf-2023a
+module load tqdm/4.66.1-GCCcore-12.3.0
+cd $HOME/Sidechain-auto-encoder
+source sidechain/bin/activate
+
+# CHANGE THREE FILES
+cd torch_kdtree
+pip install .
+wandb login
+
+srun --partition=genoa --ntasks=1 --cpus-per-task=192 --time=00:59:00 --pty bash -i
+module purge
+module load 2023
+module load IPython/8.14.0-GCCcore-12.3.0
+module load PyTorch/2.1.2-foss-2023a
+module load scikit-learn/1.3.1-gfbf-2023a
+module load plotly.py/5.16.0-GCCcore-12.3.0
+module load matplotlib/3.7.2-gfbf-2023a
+module load tqdm/4.66.1-GCCcore-12.3.0
+cd $HOME/Sidechain-auto-encoder
+source sidechain-cpu/bin/activate
+
+pkill -9 -f amino/energy/struct_to_energy_multi.py
+ps -ef | grep python
+
+
+HAE encoder-decoder:
+sbatch --array=0-2 jobfiles/full/HAE.job
+sbatch --array=0-2 jobfiles/synth/HAE.job
+
+HAE encoder-decoder no uniformity loss:
+sbatch --array=0-2 jobfiles/full/HAE_no_uni.job
+sbatch --array=0-2 jobfiles/synth/HAE_no_uni.job
+
+HAE second decoder:
+sbatch --array=0-2 jobfiles/full/HAE_decoder_energy.job
+sbatch --array=0-2 jobfiles/synth/HAE_decoder_energy.job
+
+HAE second decoder no energy prediction:
+sbatch --array=0-2 jobfiles/full/HAE_decoder.job
+sbatch --array=0-2 jobfiles/synth/HAE_decoder.job
+
+HAE energy predictor:
+sbatch --array=0-2 jobfiles/full/HAE_energy_predictor.job
+sbatch --array=0-2 jobfiles/synth/HAE_energy_predictor.job
+
+Torsion decoder:
+sbatch --array=0-2 jobfiles/full/torsion_decoder.job
+sbatch --array=0-2 jobfiles/synth/torsion_decoder.job
+
+Torsion energy predictor with periodicity:
+sbatch --array=0-2 jobfiles/full/torsion_energy_predictor_dim2.job
+sbatch --array=0-2 jobfiles/synth/torsion_energy_predictor_dim2.job
+
+Torsion energy predictor without periodicity:
+sbatch --array=0-2 jobfiles/full/torsion_energy_predictor_dim1.job
+sbatch --array=0-2 jobfiles/synth/torsion_energy_predictor_dim1.job
+
+Mapping network:
+sbatch --array=0-2 jobfiles/full/mapping/mapping.job
+sbatch --array=0-2 jobfiles/synth/mapping/mapping.job

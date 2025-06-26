@@ -1,0 +1,15 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 16
+torsion: true
+epochs: 250
+num_folds: 5
+data_path: "dataset/synth/high_energy/data"
+latent_path: "dataset/synth/high_energy/torsion_latents_dim1"
+energy_path: "dataset/synth/high_energy/energy"
+force: ["PeriodicTorsionForce", "LJForce", "CoulombForce"]
+iqr_filter_energy: False
+interpolate_energy: False
+normalize_energy: True
+inf_filter: True
+lr: 0.0005

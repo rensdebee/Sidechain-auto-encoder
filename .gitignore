@@ -1,0 +1,22 @@
+**/__pycache__
+*.pyc
+__pycache__/
+# checkpoints/
+dataset/
+# pdbs/
+wandb/
+*.pdb
+# *.pdf
+*.pt
+# *.ckpt
+*.txt
+results/
+!results/**/*.py
+*.out
+sidechain/
+sidechain-cpu/
+pdbfixer/
+lightning_logs/
+kd_tree_test/
+mnist_representatives/
+eval/

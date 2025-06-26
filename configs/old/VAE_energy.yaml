@@ -1,0 +1,11 @@
+# amino_acid: "GLU"
+batch_size: 4096
+num_workers: 8
+VAE: true
+HAE: false
+epochs: 100
+data_path: "./dataset/clean"
+hidden_dims: "[1024, 256, 128]"
+latent_dim: 3
+lr: 0.002
+reg_ratio: 0

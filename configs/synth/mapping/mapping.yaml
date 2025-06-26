@@ -1,0 +1,8 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 8
+epochs: 100
+num_folds: 5
+data_path: "dataset/new_synth/data"
+HAE_latent_path: "dataset/new_synth/HAE_latents"
+lr: 0.0001

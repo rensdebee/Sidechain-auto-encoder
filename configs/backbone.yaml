@@ -1,0 +1,18 @@
+# amino_acid: "GLY"
+batch_size: 4096
+num_workers: 8
+torsion_dim: 2
+epochs: 200
+num_folds: 2
+data_path: "./dataset/backbone_tensors"
+# energy_path: "./dataset/backbone_tensors/energy"
+decoder: true
+mul_HAE: true
+force_types: ["PeriodicTorsionForce", "LJForce", "CoulombForce"]
+hidden_dims: "[2048, 512, 256]"
+HAE_dim: 0
+iqr_filter_energy: True
+interpolate_energy: False
+normalize_energy: True
+inf_filter: False
+lr: 0.005

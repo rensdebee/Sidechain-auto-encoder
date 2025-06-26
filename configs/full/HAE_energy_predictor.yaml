@@ -1,0 +1,15 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 8
+epochs: 250
+data_path: "dataset/full/data"
+latent_path: "dataset/full/HAE_latents"
+energy_path: "dataset/full/interpolated_energy"
+force: ["PeriodicTorsionForce", "LJForce", "CoulombForce"]
+iqr_filter_energy: False
+interpolate_energy: False
+normalize_energy: True
+inf_filter: True
+data_increase: 1
+border_ratio: 0.75
+lr: 0.0005

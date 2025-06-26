@@ -1,0 +1,9 @@
+# amino_acid: "ARG"
+batch_size: 4096
+num_workers: 16
+epochs: 250
+num_folds: 5
+data_path: "dataset/synth/high_energy/data"
+latent_path: "dataset/synth/high_energy/torsion_latents_dim1"
+hidden_dims: "[1024, 256, 128]"
+lr: 0.001

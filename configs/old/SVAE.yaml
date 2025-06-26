@@ -1,0 +1,13 @@
+amino_acid: "LYS"
+batch_size: 512
+num_workers: 8
+VAE: false
+HAE: true
+SVAE: false
+PSVAE: false
+epochs: 300
+data_path: "./dataset/synth_data"
+hidden_dims: "[1024, 256, 128]"
+latent_dim: 3
+lr: 0.0001  
+reg_ratio: 1000

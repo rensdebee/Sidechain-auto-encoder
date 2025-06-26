@@ -1,0 +1,14 @@
+amino_acid: "LYS"
+batch_size: 1024
+num_workers: 1
+epochs: 100
+data_path: "./dataset/synth_data"
+latent_path: "./dataset/synth_latents"
+energy_path: "./dataset/synth_energy"
+force: ["PeriodicTorsionForce", NonbondedForce]
+iqr_filter_energy: True
+interpolate_energy: False
+normalize_energy: True
+num_folds: 5
+torsion: true
+lr: 0.0005

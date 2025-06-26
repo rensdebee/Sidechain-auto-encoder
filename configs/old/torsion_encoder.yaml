@@ -1,0 +1,12 @@
+amino_acid: "ARG"
+batch_size: 4096
+num_workers: 8
+VAE: false
+HAE: false
+torsion: true
+epochs: 250
+data_path: "./dataset/clean"
+hidden_dims: "[1024, 256, 128]"
+latent_dim: 0
+lr: 0.002
+reg_ratio: 0

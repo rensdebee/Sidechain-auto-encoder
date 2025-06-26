@@ -1,0 +1,10 @@
+amino_acid: "ARG"
+batch_size: 1024
+num_workers: 0
+epochs: 100
+latent_path: "./dataset/torsion_latents"
+energy_path: "./dataset/energy"
+force: "PeriodicTorsionForce"
+num_folds: 5
+torsion: true
+lr: 0.0005

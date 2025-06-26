@@ -1,0 +1,10 @@
+batch_size: 4096
+num_workers: 8
+VAE: true
+HAE: false
+epochs: 200
+data_path: "./dataset/clean_10"
+hidden_dims: "[1024, 256, 128]"
+latent_dim: 4
+lr: 0.002
+reg_ratio: 0

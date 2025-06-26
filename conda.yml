@@ -1,0 +1,26 @@
+name: sidechain-ae
+channels:
+  - default
+  - pytorch 
+  - nvidia
+  - conda-forge
+dependencies:
+  - python==3.12
+  - pip
+  - pytorch 
+  - torchvision 
+  - torchaudio 
+  - pytorch-cuda=12.4
+  - lightning 
+  - numpy==1.26.4
+  - scikit-learn
+  - pandas
+  - plotly
+  - biopython
+  - wandb
+  - openmm
+  - seaborn
+  - pdbfixer
+  - pip:
+    - matplotlib
+    
