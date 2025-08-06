@@ -15,6 +15,8 @@ This repository contains the code associated with the thesis Efficient energy gu
 ├─ jobfiles (Jobfiles to be used when training on Snellius)
 └─ results (stores results + code to generate figures/tabes)
 ```
+[Dataset download link](https://zenodo.org/records/16752382?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImQxYjU2YWFiLTkwYjAtNDMzMi1hMzY3LThhMTliNmVlNTYzOCIsImRhdGEiOnt9LCJyYW5kb20iOiI1NWMxZDE4M2U4ZGJkYTkyODU1ZjFjODk0OGFlOGM4YSJ9.XrKTJIJoXhWWdV499T1v1D-Xax5I_sesEPqcJleJGNcHHbL-pMIfKTgi64iDTh_tG0Sy8GnQjyaoB9TY6IpLUg)
+
 Some naming conventions in the code are slightly different from the thesis:
 
 Code: Thesis
